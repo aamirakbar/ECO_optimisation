@@ -20,14 +20,21 @@ timing, power, area and balance.
 | Example | File | Top module | Size, roughly |
 | --- | --- | --- | --- |
 | UART | `Examples/uart/uart.v` | `uart` | 360 cells |
-| 32-bit barrel shifter | `Examples/barrel_shifter/barrel_shifter.v` | `barrel_shifter` | 300 cells |
-| 16 × 16-bit multiplier | `Examples/multiplier/individual_clk.v` | `individual_clk` | 1,100 cells |
+| 3 × 3 convolution (SystemVerilog) | `Examples/sv_conv/conv_converted.v` | `conv_3x3` | 210 cells |
+| 32-bit serial-parallel multiplier | `Examples/spm/spm.v` | `spm` | 330 cells |
+| 16 × 16-bit multiplier | `Examples/multiplier/multiplier.v` | `multiplier` | 1,100 cells |
+| 16 × 16-bit multiply-accumulate (SystemVerilog) | `Examples/sv_mac/mac_converted.v` | `mac` | 1,600 cells |
+| 8-tap FIR filter | `Examples/fir_filter/fir_filter.v` | `fir_filter` | 3,100 cells |
 | PicoRV32 RISC-V CPU | `Examples/riscv/picorv32.v` | `picorv32` | 7,800 cells |
 | AES block cipher | the seven files in `Examples/aes/` | `aes` | 18,000 cells |
+| DES block cipher with fault detection | `Examples/sdes/sdes.v` | `sdes` | 27,000 cells |
 | FIFO, 512 × 32 bits | `Examples/fifo/fifo.v` | `fifo` | 39,000 cells |
 
 Sizes are `sky130_fd_sc_hd` cells after synthesis. Each top module has the `clk` input the
-workflow needs. Start with the UART: it has reference results to compare with (below).
+workflow needs. The convolution and the multiply-accumulate are SystemVerilog designs, `conv.sv`
+and `mac.sv`. The server checks those files, but a GA job takes Verilog: run it on the
+`_converted.v` file beside each, which [sv2v](https://github.com/zachjs/sv2v) made from the `.sv`
+file. Start with the UART: the steps below use it.
 
 ## Run one
 

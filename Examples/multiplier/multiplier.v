@@ -1,4 +1,4 @@
-module individual_clk (clk,	A,	B,	P);
+module multiplier (clk,	A,	B,	P);
   input clk;
 	input [15:0] A;
 	input [15:0] B;
