@@ -60,20 +60,6 @@ Good to know:
 - **Your jobs are yours.** Only you see them, and they are deleted after 30 days.
   *"List my GA jobs."* finds them again (`list_ga_jobs`).
 
-## The UART's reference results
-
-With the clock period left to the workflow, a UART job's report has these lines, between its
-ruled lines:
-
-```text
-  FINAL ECO REPORT (6 FLOWS) - Clock: 2.95 ns
-Flow                   | Area (um^2)   | WNS (ns)   | Power (mW)   | Slew (ns)  | LEC
-1. Baseline            | 3904.00       | 0.27       | 1.490        | 0.49       | N/A
-2. Repair ECO          | 3610.00       | 0.61       | 1.400        | 0.20       | ✅
-```
-
-Flows 3 to 6, the GA's, differ a little from one job to the next.
-
 ## Sources
 
 - `Examples/aes/`: Joachim Strömbergson's AES core, © 2013–2014 Secworks Sweden AB, under the
